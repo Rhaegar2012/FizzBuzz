@@ -36,7 +36,7 @@ function displayFizzBuzz(array){
             cell=`<td>${array[i]}<td>`
             rowTemplate+=cell;
         }
-        rowTemplate="<td>"+rowTemplate+"<td>";
+        rowTemplate="<tr>"+rowTemplate+"<tr>";
         tableTemplate+=rowTemplate;
         rowTemplate='';
     }

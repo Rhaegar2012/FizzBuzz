@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding Project by Jose Tellez</title>
+    <title>FizzBuzz: A coding Project by Jose Tellez</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,7 +22,7 @@
 <!--Nav Section-->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/default-monochrome-white-icon.svg" width="60" height="24" class="d-inline align-text-bottom"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/default-monochrome-white-icon.svg" width="60" height="24" class="d-inline align-text-bottom">FizzBuzz</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,6 +51,75 @@
 <!--Main Section-->
 <main class="flex-shrink-0">
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h4>FizzBuzz: A coding project</h4>
+                </div>
+                <div>
+                    <p>
+                        When it counts you FizzBuzz. A javascript coding excercise using loops.
+                        The progra prints the numbers from 1 to 100 and for multiples of '3' display
+                        <strong>'Fizz'</strong> instead of the number and for the multiples of 
+                        '5' display <strong>'Buzz'</strong>. For a multiple of both display 
+                        <strong>'FizzBuzz'</strong>
+                    </p>
+                </div>
+                <div>
+                    <h4>Instructions</h4>
+                </div>
+                <div>
+                    <p>
+                        Enter a fizz and a buzz value. Press the button and the values will appear.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="container align-content-end">
+                    <form>
+                        <div class='row py-1'>
+                            <div class='col'>
+                                <h5>Enter Values</h5>
+                                <input type="number" id="fizzInput" class="form-control" placeholder="Fizz Value">
+                                <div>
+                             
+                                </div>
+                            </div>
+                            <div class="col mt-2 py-4" >
+                                <input type="number" id="buzzInput" class="form-control" placeholder="Buzz Value">
+                                <div class="container py-2 ">
+                                    <button type="button" id="buzzButton" class="btn btn-dark">
+                                        Buzz it
+                                    </button> 
+                                </div>
+                            </div>
+                         
+                        </div>
+                        <div class='row'>
+                            <div class='col'>
+                                <div>
+                                    <h3>Results</h3>
+                                </div>
+                                <div class='container'>
+                                    <div class='table-responsive'>
+                                        <table class="table table-striped">
+                                            <tbody id="fizzBuzzTable">
+                                                <!--Results go here-->
+                                            </tbody>
+                                        </table>
+                                    
+                                    </div>
+                                    
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
@@ -87,7 +156,9 @@ integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0Ec
 </script>
 <!--Link to javascript scripts-->
 <script src="js/site.js">
-
+</script>
+<script>
+    document.getElementById("buzzButton").addEventListener("click",getValues);
 </script>
 </body>
 </html>

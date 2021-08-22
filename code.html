@@ -41,7 +41,7 @@
                     <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/Rhaegar2012/FizzBuzz">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="https://josetellezdev.netlify.app/">About</a>
@@ -58,17 +58,90 @@
             <div class="col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-javascript">
-                        //Call Hello World 
-                        function HelloWorld(){
-                            alert("hello world");
+                        //Reads values from form
+                        function getValues(){
+                        let fizzValue=parseInt(document.getElementById("fizzInput").value);
+                        let buzzValue=parseInt(document.getElementById("buzzInput").value);
+                        let fizzBuzzArray=fizzBuzz(fizzValue, buzzValue);
+                        displayFizzBuzz(fizzBuzzArray);
                         }
+                        //Builds FizzBuzz array
+                        function fizzBuzz(fizzValue, buzzValue){
+                        values=[];
+                        for(let i=0; i<=100;i++){
+                        if(i%fizzValue==0 && i%buzzValue==0){
+                        values.push('FizzBuzz');
+                         }
+                        else if(i%fizzValue==0){
+                        values.push('Fizz');
+                        }
+                        else if(i%buzzValue==0){
+                         values.push('Buzz');
+                        }
+                        else{
+                            values.push(i);
+                        }
+
+                        }
+                        return values;
+                        }
+                        //Displays the fizzbuzz values in a table 
+                        function displayFizzBuzz(array){
+                        //Get table body element from the page
+                        let tableBody=document.getElementById("fizzBuzzTable");
+                        //Get the template row
+                        let templateRow=document.getElementById("fbTemplate");
+                        //Clear table 
+                        tableBody.innerHTML="";
+
+                        for (let i=0; i<=array.length;i+=5){
+                        let tableRow=document.importNode(templateRow.content,true);
+                        //Grab just the td and put them into array
+                        let rowCols = tableRow.querySelectorAll("td");
+                        rowCols[0].classList.add(array[i]);
+                        rowCols[0].textContent=array[i];
+
+                        rowCols[1].classList.add(array[i+1]);
+                        rowCols[1].textContent=array[i+1];
+
+                        rowCols[2].classList.add(array[i+2]);
+                        rowCols[2].textContent=array[i+2];
+
+                        rowCols[3].classList.add(array[i+3]);
+                        rowCols[3].textContent=array[i+3];
+
+                        rowCols[4].classList.add(array[i+4]);
+                        rowCols[4].textContent=array[i+4];
+                        tableBody.appendChild(tableRow);
+                     }
+                    }
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p> The Code is structed in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <p> The Code is structed in three functions</p>
+                <h5>getValues()</h5>
+                <p>Input:<br>
+                    None<br>
+                    Function:<br>
+                    gets the fizz and buzz values from the form<br>
+                    Output<br>
+                    :None
+                </p>
+                <h5>fizzBuzz(fizzValue, buzzValue)</h5>
+                <p>Input:<br>
+                   fizzValue int , buzzValue int<br>
+                   Function<br>
+                   Generates the FizzBuzz Array with a set of predifined condtions<br>
+                   Output:<br>
+                   Fizz buzz values array<br>
+                </p>
+                <h5>displayFizzBuzz(fizzbuzzArray)</h5>
+                <p>Input:<br>
+                   Array of fizz buzz values<br>
+                   Function:<br>
+                   Displays the fizzbuzz table with the use of html templates<br>
+                   Output: None<br>
             </div>
         </div>
     </div>

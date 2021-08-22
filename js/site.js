@@ -27,18 +27,31 @@ function fizzBuzz(fizzValue, buzzValue){
 }
 //Displays the fizzbuzz values in a table 
 function displayFizzBuzz(array){
-    let rowLength=5;
-    let rowTemplate='';
-    let tableTemplate='';
-    let cell=''
-    for(let i=0; i<array.length;i++){
-        for(let j=0; j<=rowLength;j++){
-            cell=`<td>${array[i]}<td>`
-            rowTemplate+=cell;
-        }
-        rowTemplate="<tr>"+rowTemplate+"<tr>";
-        tableTemplate+=rowTemplate;
-        rowTemplate='';
+    //Get table body element from the page
+    let tableBody=document.getElementById("fizzBuzzTable");
+    //Get the template row
+    let templateRow=document.getElementById("fbTemplate");
+    //Clear table 
+    tableBody.innerHTML="";
+
+    for (let i=0; i<array.length;i+=5){
+        let tableRow=document.importNode(templateRow.content,true);
+        //Grab just the td and put them into array
+        let rowCols = tableRow.querySelectorAll("td");
+        rowCols[0].classList.add(array[i]);
+        rowCols[0].textContent=array[i];
+
+        rowCols[1].classList.add(array[i+1]);
+        rowCols[1].textContent=array[i+1];
+
+        rowCols[2].classList.add(array[i+2]);
+        rowCols[2].textContent=array[i+2];
+
+        rowCols[3].classList.add(array[i+3]);
+        rowCols[3].textContent=array[i+3];
+
+        rowCols[4].classList.add(array[i+4]);
+        rowCols[4].textContent=array[i+4];
+        tableBody.appendChild(tableRow);
     }
-    document.getElementById("fizzBuzzTable").innerHTML=tableTemplate;
 }

@@ -39,7 +39,7 @@
                     <a class="nav-link" href="/code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/Rhaegar2012/FizzBuzz">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="https://josetellezdev.netlify.app/">About</a>
@@ -88,40 +88,34 @@
                             </div>
                             <div class="col mt-2 py-4" >
                                 <input type="number" id="buzzInput" class="form-control" placeholder="Buzz Value">
-                                <div class="container py-2 ">
-                                    <button type="button" id="buzzButton" class="btn btn-dark">
-                                        Buzz it
-                                    </button> 
-                                </div>
                             </div>
-                         
-                        </div>
-                        <div class='row'>
-                            <div class='col'>
-                                <div>
-                                    <h3>Results</h3>
-                                </div>
-                                <div class='container'>
-                                    <div class='table-responsive'>
-                                        <table class="table table-striped">
-                                            <tbody id="fizzBuzzTable">
-                                                <!--Results go here-->
-                                            </tbody>
-                                        </table>
-                                    
-                                    </div>
-                                    
-                                </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" id="buzzButton" class="btn btn-dark">
+                                    Buzz it
+                                </button> 
                             </div>
                         </div>
                     </form>
                 </div>
-
+                <div class='row'>
+                    <div class='col'>
+                        <div>
+                            <h3>Results</h3>
+                        </div>
+                        <div class='container'>
+                            <div class='table-responsive'>
+                                <table class="table table-striped">
+                                    <tbody id="fizzBuzzTable">
+                                        <!--Results go here-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
 </main>
 <footer class="footer mt-auto py-3 bg-dark  sticky-footer">
     <div class="container-fluid">
@@ -147,6 +141,17 @@
      
     </div>
 </footer>
+<!--Templates-->
+<template id="fbTemplate">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+<!--Link to CSS and bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
 integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
 </script>
